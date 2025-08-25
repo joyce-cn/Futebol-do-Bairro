@@ -1,0 +1,10 @@
+@page
+@model FutebolDoBairro.Pages.LoginModel
+<form method="post">
+    <input asp-for="Email" type="email" placeholder="Email" required />
+    <input asp-for="Senha" type="password" placeholder="Senha" required />
+    <button type="submit">Entrar</button>
+</form>
+
+<p>Não possui conta? <a asp-page="/Registre">Cadastre-se aqui</a></p>
+

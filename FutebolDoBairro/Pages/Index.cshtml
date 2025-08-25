@@ -1,0 +1,61 @@
+﻿@page
+@model FutebolDoBairro.Pages.IndexModel
+
+
+<h2>Cadastro do Responsável e Filho</h2>
+
+<form method="post">
+    <h3>Responsável</h3>
+    <div>
+    <label>Nome:</label>
+    <input asp-for="Cadastro.NomeResponsavel" required /><br />
+    </div>
+
+    <div>
+        <label>Email:</label>
+    <input asp-for="Cadastro.Email" type="email" required /><br />
+    </div>
+    
+    <h3>Filho</h3>
+    <div>
+    <label>Nome do Filho:</label>
+    <input asp-for="Cadastro.NomeAluno" required /><br />
+    </div>
+
+    <div>
+    <label>Idade:</label>
+    <input asp-for="Cadastro.IdadeAluno" type="number" min ="6" max="16" required /><br />
+    </div>
+
+    <div>
+    <label for="Cadastro.Posicao">Posição em campo preferida:</label>
+    <select asp-for="Cadastro.Posicao" class="form-control" required>
+    <option value="Goleiro">Goleiro</option>
+    <option value="Zagueiro">Zagueiro</option>
+    <option value="Lateral">Lateral</option>
+    <option value="Volante">Volante</option>
+    <option value="Meia">Meia</option>
+    <option value="Atacante">Atacante</option>
+    <option value="Ponta">Ponta</option>
+    </select>
+    <span asp-validation-for="Cadastro.Posicao" class="text-danger"></span>
+    </div>
+
+     <div>
+    <label>Senha</label>
+        <input asp-for="Cadastro.Senha" type="password" />
+        <span asp-validation-for="Cadastro.Senha"></span>
+    </div>
+    <div>
+        <label>Confirmação de Senha</label>
+        <input asp-for="Cadastro.ConfirmarSenha" type="password" />
+        <span asp-validation-for="Cadastro.ConfirmarSenha"></span>
+    </div>
+
+    <button type="submit">Cadastrar</button>
+</form>
+
+@if (TempData["Mensagem"] != null)
+{
+    <p> style=@TempData["Mensagem"]</p>
+}
