@@ -57,7 +57,7 @@ dotnet run
 
 Abra no navegador:
 
-https://localhost:5001/Registre
+https://localhost:5247/Registre
 
 📌 Próximos Passos
 
